@@ -1,8 +1,10 @@
 const { Router } = require("express");
 const router = Router();
 
-router.get("/", (req, res) => {
-    res.send("Hello World")
-})
+const authentication = require("./authentication.routes")
+const links = require("./links.routes")
+
+router.use("/links",links)
+router.use("/log",authentication)
 
 module.exports = router;
