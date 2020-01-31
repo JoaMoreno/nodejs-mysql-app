@@ -3,6 +3,8 @@ const router = Router();
 
 const linksCtrl = require("../controllers/links.controller")
 
-router.get("/add", linksCtrl.add)
+router.route("/add")
+    .get(linksCtrl.getAdd)
+    .post(linksCtrl.postAdd)
 
 module.exports = router;
